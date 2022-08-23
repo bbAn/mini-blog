@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 function Button(props) {
-    const { title, onClick } = props;
+  const { title, onClick } = props;
 
-    return <StyledButton onClick={onClick}>{title || "button"}</StyledButton>;
+  return <StyledButton onClick={onClick}>{title || 'button'}</StyledButton>;
 }
 
 export default Button;
@@ -17,4 +17,3 @@ const StyledButton = styled.button`
     border-radius: 8px;
     cursor: pointer;
 `;
-

@@ -1,54 +1,54 @@
-import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import styled from "styled-components";
-import CommentList from "../list/CommentList";
-import TextInput from "../ui/TextInput";
-import Button from "../ui/Button";
-import data from "../../data.json";
+import React, { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import CommentList from '../list/CommentList';
+import TextInput from '../ui/TextInput';
+import Button from '../ui/Button';
+import data from '../../data.json';
 
 function PostViewPage(props) {
-    const navigate = useNavigate();
-    const { postId } = useParams();
+  const navigate = useNavigate();
+  const { postId } = useParams();
 
-    const post = data.find((item) => {
-        return item.id == postId;
-    });
+  const post = data.find((item) => {
+    return item.id === postId;
+  });
 
-    const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
 
-    return(
-        <Wrapper>
-            <Container>
-                <Button
-                    title="뒤로 가기"
-                    onClick={() => {
-                        navigate("/");
-                    }}
-                />
-                <PostContainer>
-                    <TitleText>{post.title}</TitleText>
-                    <ContentText>{post.content}</ContentText>
-                </PostContainer>
+  return (
+    <Wrapper>
+      <Container>
+        <Button
+          title="뒤로 가기"
+          onClick={() => {
+            navigate('/');
+          }}
+        />
+        <PostContainer>
+          <TitleText>{post.title}</TitleText>
+          <ContentText>{post.content}</ContentText>
+        </PostContainer>
 
-                <CommentLabel>댓글</CommentLabel>
-                <CommentList comments={post.comments} />
+        <CommentLabel>댓글</CommentLabel>
+        <CommentList comments={post.comments} />
 
-                <TextInput
-                    height={40}
-                    value={comment}
-                    onChange={(event) => {
-                        setComment(event.target.value);
-                    }}
-                />
-                <Button
-                    title="댓글 작성하기"
-                    onClick={() => {
-                        navigate("/");
-                    }}
-                />
-            </Container>
-        </Wrapper>
-    );
+        <TextInput
+          height={40}
+          value={comment}
+          onChange={(event) => {
+            setComment(event.target.value);
+          }}
+        />
+        <Button
+          title="댓글 작성하기"
+          onClick={() => {
+            navigate('/');
+          }}
+        />
+      </Container>
+    </Wrapper>
+  );
 }
 
 export default PostViewPage;

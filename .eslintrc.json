@@ -1,0 +1,72 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "eslint:recommended",
+        "plugin:jsx-a11y/recommended",
+        "airbnb"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "jsx-a11y"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".jsx"] }],
+      "react/prop-types": 0,
+      "operator-linebreak": ["error", "after"], // 연사자 위치 : 뒤
+      "no-unused-vars": 0,
+      "arrow-body-style": ["error", "always"],
+      
+      "jsx-a11y/alt-text": [ 2, {
+        "elements": [ "img", "object", "area", "input[type=\"image\"]" ],
+        "img": ["Image"],
+        "object": ["Object"],
+        "area": ["Area"],
+        "input[type=\"image\"]": ["InputImage"]
+      }],
+      // "jsx-a11y/anchor-ambiguous-text": [2, {
+      //   "words": ["here"]
+      // }],
+      "jsx-a11y/anchor-has-content": [ 2, {
+        "components": [ "Anchor" ]
+      }],
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": ["Link"],
+          "specialLink": ["hrefLeft", "hrefRight"],
+          "aspects": ["noHref", "invalidHref", "preferButton"]
+        }
+      ],
+      "jsx-a11y/autocomplete-valid": [ 2, {
+        "inputComponents": ["Input", "FormField"]
+    }],
+    "jsx-a11y/img-redundant-alt": [ 2, {
+      "components": [ "Image" ],
+      "words": [ "이미지", "사진", "그림" ]
+    }],
+    "jsx-a11y/interactive-supports-focus": [
+      "error",
+      {
+        "tabbable": [
+          "button",
+          "checkbox",
+          "link",
+          "searchbox",
+          "spinbutton",
+          "switch",
+          "textbox"
+        ]
+      }
+    ]
+    }
+}
